@@ -1,15 +1,3 @@
-"""
-train.py
---------
-Trains a Logistic Regression model with L2 regularization
-to predict 30-day hospital readmission.
-
-Includes:
-- L2-regularized logistic regression (scikit-learn default penalty)
-- Cross-validation to tune regularization strength (C)
-- Comparison with L1 regularization (for discussion in report)
-"""
-
 import warnings
 warnings.filterwarnings("ignore")  # suppress sklearn version-specific deprecation notices
 
@@ -23,12 +11,6 @@ from preprocess import load_data, clean_data, encode_features, split_and_scale
 
 
 def train_l2_model(X_train, y_train):
-    """
-    Train Logistic Regression with L2 regularization.
-    Use GridSearchCV to find the best regularization strength (C).
-    Note: C is the INVERSE of regularization strength
-    (smaller C = stronger regularization).
-    """
     param_grid = {"C": [0.001, 0.01, 0.1, 1, 10, 100]}
 
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
@@ -47,11 +29,6 @@ def train_l2_model(X_train, y_train):
 
 
 def train_l1_model(X_train, y_train):
-    """
-    Optional: Train an L1-regularized model for comparison.
-    L1 tends to push some coefficients to exactly zero (feature selection),
-    while L2 shrinks all coefficients smoothly without zeroing them out.
-    """
     param_grid = {"C": [0.001, 0.01, 0.1, 1, 10, 100]}
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
