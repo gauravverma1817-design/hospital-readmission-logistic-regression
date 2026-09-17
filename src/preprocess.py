@@ -1,16 +1,4 @@
-"""
-preprocess.py
--------------
-Cleans and prepares the raw hospital readmission data for modeling.
 
-Steps:
-1. Load raw.csv
-2. Handle missing values (none expected in synthetic data, but code defensively)
-3. Encode categorical variables (gender, diagnosis_code)
-4. Scale numeric features
-5. Split into train/test sets
-6. Save processed.csv (full cleaned dataset, before scaling) for inspection
-"""
 
 import pandas as pd
 import numpy as np
