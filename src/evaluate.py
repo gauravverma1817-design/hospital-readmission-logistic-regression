@@ -1,13 +1,3 @@
-"""
-evaluate.py
------------
-Evaluates the trained logistic regression model using:
-- Confusion Matrix
-- Precision / Recall / F1
-- ROC-AUC curve
-Also discusses the clinical cost of False Positives vs False Negatives.
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import (
